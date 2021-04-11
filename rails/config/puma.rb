@@ -10,7 +10,12 @@ threads min_threads_count, max_threads_count
 
 # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
 #
-port        ENV.fetch("PORT") { 3000 }
+# port        ENV.fetch("PORT") { 3000 }
+
+# 一般的には bind "unix://#{Rails.root}/tmp/sockets/puma.sock" を記述するが、
+# Vagrantの場合には、Virtual Box共有フォルダーに.sockファイルを保存できないため、
+# /var/tmp/pumaにsockファイルを作成する
+bind "unix:/var/tmp/puma/puma.sock"
 
 # Specifies the `environment` that Puma will run in.
 #
