@@ -15,7 +15,7 @@ threads min_threads_count, max_threads_count
 # 一般的には bind "unix://#{Rails.root}/tmp/sockets/puma.sock" を記述するが、
 # Vagrantの場合には、Virtual Box共有フォルダーに.sockファイルを保存できないため、
 # /var/tmp/pumaにsockファイルを作成する
-bind "unix:/var/tmp/puma/puma.sock"
+bind "unix:///var/tmp/puma/puma.sock"
 
 # Specifies the `environment` that Puma will run in.
 #
