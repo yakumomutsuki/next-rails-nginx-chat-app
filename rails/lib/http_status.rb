@@ -1,0 +1,18 @@
+module HttpStatus
+  # 2xx
+  SUCCESS = 200
+  NO_CONTENT = 204
+
+  # 3xx
+
+  # 4xx
+  BAD_REQUEST = 400
+  UNAUTHORIZED = 401
+  FORBIDDEN = 403
+  NOT_FOUND = 404
+
+  # 5xx
+  INTERNAL_SERVER_ERROR = 500
+  BAD_GATEWAY = 502
+  SERVICE_UNAVAILABLE = 503
+end

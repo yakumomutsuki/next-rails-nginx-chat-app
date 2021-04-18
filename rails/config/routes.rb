@@ -5,4 +5,7 @@ Rails.application.routes.draw do
       resources :sample
     end
   end
+
+  get '*not_found' => 'application#routing_error'
+  post '*not_found' => 'application#routing_error'
 end
