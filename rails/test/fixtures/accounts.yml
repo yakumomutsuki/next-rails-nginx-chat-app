@@ -2,10 +2,10 @@
 
 one:
   account_id: 1
-  account_name: 
-  password: 
+  account_name: MyString
+  password: MyString
 
 two:
   account_id: 1
-  account_name: 
-  password: 
+  account_name: MyString
+  password: MyString
