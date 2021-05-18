@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_16_145535) do
+ActiveRecord::Schema.define(version: 2021_05_18_134344) do
 
   create_table "accounts", primary_key: "account_id", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "account_name", limit: 32, null: false
@@ -19,4 +19,13 @@ ActiveRecord::Schema.define(version: 2021_05_16_145535) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "sessions", primary_key: "session_key", id: :string, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "account_id", null: false
+    t.datetime "expiration", default: -> { "(now() + interval 2 hour)" }
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_id"], name: "fk_rails_5599381559"
+  end
+
+  add_foreign_key "sessions", "accounts", primary_key: "account_id"
 end
