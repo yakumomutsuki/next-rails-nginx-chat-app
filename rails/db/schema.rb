@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2021_05_18_134344) do
 
   create_table "sessions", primary_key: "session_key", id: :string, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "account_id", null: false
-    t.datetime "expiration", default: -> { "(now() + interval 2 hour)" }
+    t.datetime "expiration", default: -> { "(now() + interval 2 hour)" }, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["account_id"], name: "fk_rails_5599381559"
