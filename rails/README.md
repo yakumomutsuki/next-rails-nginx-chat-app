@@ -5,15 +5,25 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+## Ruby version
 
-* System dependencies
+- Ruby / 2.7.0
+- Rails / 6.0.0
+- MySQL / 8.0.23
 
-* Configuration
+## System dependencies
 
-* Database creation
+## Configuration
 
-* Database initialization
+## Database creation or initialization
+
+```
+$ rake db:migrate
+
+or 
+
+$ rake db:migrate:reset
+```
 
 * How to run the test suite
 
@@ -21,4 +31,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+## Note
